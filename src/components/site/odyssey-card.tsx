@@ -10,7 +10,7 @@ export function OdysseyCard({ odyssey }: { odyssey: Odyssey }) {
   return (
     <Link
       href={`/odysseys/${odyssey.slug}`}
-      className="group flex flex-col overflow-hidden rounded-2xl border border-border bg-card transition-shadow hover:shadow-lg"
+      className="group flex flex-col overflow-hidden rounded-2xl border border-border bg-card transition-[transform,box-shadow] duration-200 ease-out hover:-translate-y-1 hover:shadow-lg"
     >
       <div
         className={`relative flex h-40 items-end p-5 text-white ${odysseyThemeStyles[odyssey.theme]}`}
@@ -36,7 +36,7 @@ export function OdysseyCard({ odyssey }: { odyssey: Odyssey }) {
         <p className="text-sm text-foreground/80">{odyssey.hook}</p>
         <span className="mt-auto inline-flex items-center gap-1 text-sm font-medium text-brand">
           {isLive ? "Read the odyssey" : "See what's coming"}
-          <ArrowUpRight className="size-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+          <ArrowUpRight className="size-4 transition-transform duration-200 ease-out group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
         </span>
       </div>
     </Link>

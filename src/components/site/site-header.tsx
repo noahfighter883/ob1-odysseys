@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Container } from "@/components/site/container";
+import { MobileNav } from "@/components/site/mobile-nav";
 import { siteConfig } from "@/content/site-config";
 
 export function SiteHeader() {
@@ -31,23 +32,7 @@ export function SiteHeader() {
         >
           {siteConfig.instagramHandle}
         </a>
-        <details className="md:hidden">
-          <summary className="list-none cursor-pointer rounded-md border border-border px-3 py-1.5 text-sm font-medium">
-            Menu
-          </summary>
-          <div className="absolute inset-x-0 top-16 border-b border-border bg-background px-6 py-4 shadow-sm">
-            <nav className="flex flex-col gap-3 text-sm font-medium">
-              {siteConfig.nav.map((item) => (
-                <Link key={item.href} href={item.href} className="py-1">
-                  {item.label}
-                </Link>
-              ))}
-              <a href={siteConfig.instagramUrl} target="_blank" rel="noreferrer" className="py-1 text-brand">
-                {siteConfig.instagramHandle}
-              </a>
-            </nav>
-          </div>
-        </details>
+        <MobileNav />
       </Container>
     </header>
   );

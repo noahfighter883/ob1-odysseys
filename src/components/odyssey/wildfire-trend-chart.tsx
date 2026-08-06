@@ -75,6 +75,8 @@ export function WildfireTrendChart({ data }: { data: TrendPoint[] }) {
             stroke="var(--chart-2)"
             strokeWidth={2}
             fill="url(#avgSizeFill)"
+            animationDuration={900}
+            animationEasing="ease-out"
           />
           <Line
             yAxisId="count"
@@ -84,6 +86,9 @@ export function WildfireTrendChart({ data }: { data: TrendPoint[] }) {
             strokeWidth={2}
             strokeDasharray="4 3"
             dot={{ r: 2 }}
+            animationDuration={900}
+            animationEasing="ease-out"
+            animationBegin={150}
           />
         </ComposedChart>
       </ResponsiveContainer>
