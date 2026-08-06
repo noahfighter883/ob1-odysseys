@@ -30,12 +30,8 @@ export default function Home() {
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black via-black/70 to-black/20" />
         <Container className="relative z-10 pb-20 pt-40">
-          <p className="mb-4 text-sm font-medium uppercase tracking-[0.2em] text-white/70">
+          <h1 className="max-w-4xl font-heading text-5xl font-semibold leading-[1.05] tracking-tight sm:text-6xl md:text-7xl">
             {siteConfig.tagline}
-          </p>
-          <h1 className="max-w-3xl font-heading text-4xl font-semibold leading-[1.05] tracking-tight sm:text-5xl md:text-6xl">
-            Real field research. Rigorous data. A case for action you can
-            check yourself.
           </h1>
           <p className="mt-6 max-w-xl text-lg text-white/80">
             OB1 Odysseys turns eco-tourism travel into short-form PSAs — each
@@ -99,7 +95,10 @@ export default function Home() {
             The bet: analytics discipline — clear evidence, clear stakes,
             clear stories — can close that will gap the way it has
             historically closed decision-making gaps in enterprise settings.{" "}
-            <Link href="/about" className="text-brand hover:underline">
+            <Link
+              href="/about"
+              className="text-brand underline underline-offset-2"
+            >
               Read the full program thesis →
             </Link>
           </p>

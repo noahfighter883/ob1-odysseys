@@ -126,7 +126,7 @@ export default function AboutPage() {
             href={siteConfig.instagramUrl}
             target="_blank"
             rel="noreferrer"
-            className="text-brand hover:underline"
+            className="text-brand underline underline-offset-2"
           >
             {siteConfig.instagramHandle}
           </a>{" "}
@@ -134,7 +134,10 @@ export default function AboutPage() {
           reach and emotional impact. This website is the credibility and
           depth layer — the &ldquo;show your work&rdquo; case that social
           video can&apos;t accommodate.{" "}
-          <Link href="/odysseys" className="text-brand hover:underline">
+          <Link
+            href="/odysseys"
+            className="text-brand underline underline-offset-2"
+          >
             Explore the odysseys →
           </Link>
         </p>
