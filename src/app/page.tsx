@@ -8,6 +8,7 @@ import { Button } from "@/components/ui/button";
 import { odysseys, getOdyssey } from "@/content/odysseys";
 import { siteConfig } from "@/content/site-config";
 import { getWildfireAnalysis } from "@/lib/wildfire-data";
+import { odysseyThemeStyles } from "@/lib/odyssey-theme";
 
 export default function Home() {
   const featured = getOdyssey("al-was-right")!;
@@ -153,28 +154,33 @@ export default function Home() {
             />
           </Reveal>
           <Reveal delay={120}>
-            <div className="rounded-2xl border border-border bg-gradient-to-br from-[#3a0f0a] via-[#9a2d13] to-[#e08a2e] p-8 text-white">
-              <p className="font-heading text-lg font-semibold">
-                {analysis.eras[2].label}
-              </p>
-              <p className="mt-1 text-sm text-white/80">
-                {analysis.eras[2].megaFireCount} mega-fires ·{" "}
-                {analysis.eras[2].megaFiresPerYear}/yr ·{" "}
-                {Math.round(analysis.eras[2].avgMegaFireSize / 1000)}k acre
-                avg.
-              </p>
-              <div className="mt-6 space-y-3 text-sm text-white/90">
-                {analysis.eras.map((era) => (
-                  <div
-                    key={era.label}
-                    className="flex items-center justify-between border-t border-white/15 pt-3 first:border-0 first:pt-0"
-                  >
-                    <span>{era.label}</span>
-                    <span className="font-medium">
-                      {era.megaFiresPerYear}/yr
-                    </span>
-                  </div>
-                ))}
+            <div
+              className={`relative overflow-hidden rounded-2xl border border-border p-8 text-white ${odysseyThemeStyles.ember}`}
+            >
+              <div className="absolute inset-0 bg-black/40" />
+              <div className="relative z-10">
+                <p className="font-heading text-lg font-semibold">
+                  {analysis.eras[2].label}
+                </p>
+                <p className="mt-1 text-sm text-white/80">
+                  {analysis.eras[2].megaFireCount} mega-fires ·{" "}
+                  {analysis.eras[2].megaFiresPerYear}/yr ·{" "}
+                  {Math.round(analysis.eras[2].avgMegaFireSize / 1000)}k acre
+                  avg.
+                </p>
+                <div className="mt-6 space-y-3 text-sm text-white/90">
+                  {analysis.eras.map((era) => (
+                    <div
+                      key={era.label}
+                      className="flex items-center justify-between border-t border-white/15 pt-3 first:border-0 first:pt-0"
+                    >
+                      <span>{era.label}</span>
+                      <span className="font-medium">
+                        {era.megaFiresPerYear}/yr
+                      </span>
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
           </Reveal>

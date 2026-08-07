@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { ArrowLeft, AtSign, Clock, Download } from "lucide-react";
 import { Container } from "@/components/site/container";
 import { Reveal } from "@/components/site/reveal";
+import { Ob1Byline } from "@/components/site/ob1-byline";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { odysseys, getOdyssey } from "@/content/odysseys";
@@ -11,6 +12,7 @@ import { odysseyThemeStyles } from "@/lib/odyssey-theme";
 import { getWildfireAnalysis } from "@/lib/wildfire-data";
 import { WildfireTrendChart } from "@/components/odyssey/wildfire-trend-chart";
 import { EraSummaryTable } from "@/components/odyssey/era-summary-table";
+import { OnPageNav } from "@/components/odyssey/on-page-nav";
 
 export function generateStaticParams() {
   return odysseys.map((o) => ({ slug: o.slug }));
@@ -43,8 +45,11 @@ export default async function OdysseyPage({
 
   return (
     <>
-      <section className={`text-white ${odysseyThemeStyles[odyssey.theme]}`}>
-        <Container className="py-16">
+      <section
+        className={`relative overflow-hidden text-white ${odysseyThemeStyles[odyssey.theme]}`}
+      >
+        <div className="absolute inset-0 bg-black/40" />
+        <Container className="relative z-10 py-16">
           <Link
             href="/odysseys"
             className="inline-flex items-center gap-1 text-sm text-white/80 hover:text-white"
@@ -52,7 +57,8 @@ export default async function OdysseyPage({
             <ArrowLeft className="size-4" /> All odysseys
           </Link>
           <div className="animate-in fade-in slide-in-from-bottom-4 fill-mode-both mt-6 duration-500 ease-out">
-            <div className="flex flex-wrap items-center gap-3">
+            <Ob1Byline />
+            <div className="mt-4 flex flex-wrap items-center gap-3">
               <Badge
                 variant="secondary"
                 className="border-0 bg-white/15 text-white backdrop-blur"
@@ -197,7 +203,7 @@ function AlWasRightContent({
             <Reveal>
               <SectionLabel>Call to Action</SectionLabel>
             </Reveal>
-            <div className="mt-4 grid gap-4 sm:grid-cols-2">
+            <div className="mt-4 grid grid-cols-[repeat(auto-fit,minmax(240px,1fr))] gap-4">
               {odyssey.callToAction?.map((cta, i) => (
                 <Reveal key={cta.title} delay={(i % 2) * 80}>
                   <div className="rounded-2xl border border-border bg-card p-5">
@@ -271,43 +277,48 @@ function AlWasRightContent({
           >
             <Reveal>
               <p className="font-heading font-semibold">Watch the PSA</p>
-              <p className="mt-2 text-sm text-muted-foreground">
-                The short-form video for this odyssey is published on
-                Instagram. The full data case above is what backs every claim
-                in it.
-              </p>
-              <a
-                href="https://www.instagram.com/ob1odysseys"
-                target="_blank"
-                rel="noreferrer"
-                className="mt-4 inline-flex items-center gap-1.5 text-sm font-medium text-brand hover:underline"
-              >
-                <AtSign className="size-4" /> View on @ob1odysseys
-              </a>
+              {odyssey.videoUrl ? (
+                <>
+                  <p className="mt-2 text-sm text-muted-foreground">
+                    The short-form video for this odyssey is published on
+                    Instagram. The full data case above is what backs every
+                    claim in it.
+                  </p>
+                  <a
+                    href={odyssey.videoUrl}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="mt-4 inline-flex items-center gap-1.5 text-sm font-medium text-brand hover:underline"
+                  >
+                    <AtSign className="size-4" /> Watch the PSA on Instagram
+                  </a>
+                </>
+              ) : (
+                <>
+                  <p className="mt-2 text-sm text-muted-foreground">
+                    This odyssey&apos;s short-form PSA is part of the OB1
+                    Odysseys series on Instagram. We&apos;ll link the specific
+                    post here once it&apos;s live — for now, the full data
+                    case above is what backs every claim it makes.
+                  </p>
+                  <a
+                    href="https://www.instagram.com/ob1odysseys"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="mt-4 inline-flex items-center gap-1.5 text-sm font-medium text-brand hover:underline"
+                  >
+                    <AtSign className="size-4" /> Browse @ob1odysseys on
+                    Instagram
+                  </a>
+                </>
+              )}
             </Reveal>
           </section>
         </div>
 
         {/* On-page nav */}
         <aside className="hidden lg:block">
-          <div className="sticky top-24 space-y-1 border-l border-border pl-5 text-sm">
-            {[
-              ["problem", "Problem Statement"],
-              ["analysis", "Analysis"],
-              ["action", "Call to Action"],
-              ["sources", "Sources"],
-              ["datasets", "Datasets"],
-              ["video", "Watch the PSA"],
-            ].map(([id, label]) => (
-              <a
-                key={id}
-                href={`#${id}`}
-                className="block py-1 text-muted-foreground transition-colors hover:text-foreground"
-              >
-                {label}
-              </a>
-            ))}
-          </div>
+          <OnPageNav />
         </aside>
       </div>
     </Container>

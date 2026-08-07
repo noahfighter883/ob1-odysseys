@@ -34,6 +34,9 @@ export type Odyssey = {
   sources?: OdysseySource[];
   datasets?: OdysseyDataset[];
   comingSoonNote?: string;
+  /** Direct link to this odyssey's specific PSA post. Falls back to the
+   * general Instagram feed when not yet published. */
+  videoUrl?: string;
 };
 
 export const odysseys: Odyssey[] = [

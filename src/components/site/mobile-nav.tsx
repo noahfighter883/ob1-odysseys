@@ -35,7 +35,7 @@ export function MobileNav() {
         type="button"
         aria-expanded={open}
         onClick={() => setOpen((v) => !v)}
-        className="rounded-md border border-border px-3 py-1.5 text-sm font-medium transition-[background-color] duration-150 hover:bg-muted"
+        className="inline-flex min-h-11 min-w-11 items-center justify-center rounded-md border border-border px-3 text-sm font-medium transition-[background-color] duration-150 hover:bg-muted"
       >
         {open ? "Close" : "Menu"}
       </button>

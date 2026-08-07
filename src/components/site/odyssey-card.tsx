@@ -13,11 +13,12 @@ export function OdysseyCard({ odyssey }: { odyssey: Odyssey }) {
       className="group flex flex-col overflow-hidden rounded-2xl border border-border bg-card transition-[transform,box-shadow] duration-200 ease-out hover:-translate-y-1 hover:shadow-lg"
     >
       <div
-        className={`relative flex h-40 items-end p-5 text-white ${odysseyThemeStyles[odyssey.theme]}`}
+        className={`relative flex h-40 items-end overflow-hidden p-5 text-white ${odysseyThemeStyles[odyssey.theme]}`}
       >
+        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent" />
         <Badge
           variant="secondary"
-          className="absolute right-4 top-4 border-0 bg-white/15 text-white backdrop-blur"
+          className="absolute right-4 top-4 z-10 border-0 bg-white/15 text-white backdrop-blur"
         >
           {isLive ? "Live" : (
             <span className="flex items-center gap-1">
@@ -25,7 +26,7 @@ export function OdysseyCard({ odyssey }: { odyssey: Odyssey }) {
             </span>
           )}
         </Badge>
-        <p className="font-heading text-xl font-semibold leading-snug">
+        <p className="relative z-10 font-heading text-xl font-semibold leading-snug">
           {odyssey.title}
         </p>
       </div>
