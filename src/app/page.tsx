@@ -1,9 +1,9 @@
-import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, Flame, TrendingUp, Zap } from "lucide-react";
 import { Container } from "@/components/site/container";
 import { OdysseyCard } from "@/components/site/odyssey-card";
 import { Reveal } from "@/components/site/reveal";
+import { HeroScroll } from "@/components/site/hero-scroll";
 import { Button } from "@/components/ui/button";
 import { odysseys, getOdyssey } from "@/content/odysseys";
 import { siteConfig } from "@/content/site-config";
@@ -21,50 +21,15 @@ export default function Home() {
 
   return (
     <>
-      {/* Hero */}
-      <section className="relative flex min-h-[90vh] items-end overflow-hidden bg-black text-white">
-        <Image
-          src="/images/hero-climate.png"
-          alt="A composite image of wildfire devastation and glacial collapse split around Earth, illustrating climate urgency."
-          fill
-          priority
-          className="animate-hero-zoom object-cover opacity-90"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/70 to-black/20" />
-        <Container className="relative z-10 pb-20 pt-40">
-          <h1 className="animate-in fade-in slide-in-from-bottom-4 fill-mode-both max-w-4xl font-heading text-5xl font-semibold leading-[1.05] tracking-tight duration-700 ease-out sm:text-6xl md:text-7xl">
-            {siteConfig.tagline}
-          </h1>
-          <p className="animate-in fade-in slide-in-from-bottom-4 fill-mode-both delay-100 mt-6 max-w-xl text-lg text-white/80 duration-700 ease-out">
-            OB1 Odysseys turns eco-tourism travel into short-form PSAs — each
-            one backed by a sourced, data-driven case published in full here.
-            Evidence carries the weight, not rhetoric.
-          </p>
-          <div className="animate-in fade-in slide-in-from-bottom-4 fill-mode-both delay-200 mt-8 flex flex-wrap gap-4 duration-700 ease-out">
-            <Button
-              size="lg"
-              nativeButton={false}
-              className="bg-white text-black hover:bg-white/90"
-              render={
-                <Link href="/odysseys">
-                  Explore the odysseys <ArrowRight className="size-4" />
-                </Link>
-              }
-            />
-            <Button
-              size="lg"
-              variant="outline"
-              nativeButton={false}
-              className="border-white/30 bg-transparent text-white hover:bg-white/10 hover:text-white"
-              render={
-                <a href={siteConfig.instagramUrl} target="_blank" rel="noreferrer">
-                  Follow {siteConfig.instagramHandle}
-                </a>
-              }
-            />
-          </div>
-        </Container>
-      </section>
+      <HeroScroll
+        tagline={siteConfig.tagline}
+        description="OB1 Odysseys turns eco-tourism travel into short-form PSAs — each one backed by a sourced, data-driven case published in full here. Evidence carries the weight, not rhetoric."
+        statValue={`${frequencyMultiple}×`}
+        statLabel="more mega-fires per year along the Pacific Crest Trail, 2020–25 vs 2000–12 — computed live from the published dataset."
+        odysseyHref="/odysseys"
+        instagramUrl={siteConfig.instagramUrl}
+        instagramHandle={siteConfig.instagramHandle}
+      />
 
       {/* Thesis strip */}
       <section className="border-b border-border bg-secondary/30 py-16">

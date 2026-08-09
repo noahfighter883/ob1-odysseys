@@ -141,24 +141,7 @@
   }
 }
 
-@keyframes hero-zoom {
-  from {
-    transform: scale(1);
-  }
-  to {
-    transform: scale(1.06);
-  }
-}
-
-.animate-hero-zoom {
-  animation: hero-zoom 20s var(--ease-out) forwards;
-}
-
 @media (prefers-reduced-motion: reduce) {
-  .animate-hero-zoom {
-    animation: none;
-  }
-
   /* Keep the fade, drop translate/scale/rotate movement on mount animations. */
   .animate-in {
     --tw-enter-translate-x: 0 !important;
