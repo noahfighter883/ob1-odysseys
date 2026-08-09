@@ -150,7 +150,7 @@ export function HeroScroll({
         <Container className="relative z-10 flex h-full flex-col justify-end pb-20 pt-40">
           <div className="relative min-h-[300px] sm:min-h-[260px]">
             <motion.div
-              style={{ opacity: beat1Opacity, y: beat1Y }}
+              style={{ opacity: beat1Opacity, y: beat1Y, willChange: "opacity, transform" }}
               className="absolute inset-0"
             >
               <Ob1Byline className="mb-5" />
@@ -163,7 +163,7 @@ export function HeroScroll({
             </motion.div>
 
             <motion.div
-              style={{ opacity: beat2Opacity, y: beat2Y }}
+              style={{ opacity: beat2Opacity, y: beat2Y, willChange: "opacity, transform" }}
               className="absolute inset-0 flex flex-col justify-center"
             >
               <p className="font-heading text-6xl font-semibold leading-none sm:text-7xl">
@@ -175,7 +175,7 @@ export function HeroScroll({
             </motion.div>
 
             <motion.div
-              style={{ opacity: beat3Opacity, y: beat3Y }}
+              style={{ opacity: beat3Opacity, y: beat3Y, willChange: "opacity, transform" }}
               className="absolute inset-0 flex flex-col justify-center"
             >
               <p className="max-w-md font-heading text-3xl font-semibold leading-tight sm:text-4xl">
