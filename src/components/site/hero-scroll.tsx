@@ -42,7 +42,7 @@ export function HeroScroll({
   });
 
   const imageScale = useTransform(scrollYProgress, [0, 1], [1, 1.15]);
-  const overlayOpacity = useTransform(scrollYProgress, [0, 1], [0.55, 0.8]);
+  const textOpacity = useTransform(scrollYProgress, [0, 1], [1, 0]);
 
   const content = (
     <>
@@ -87,6 +87,7 @@ export function HeroScroll({
     return (
       <section
         id="hero-pinned"
+        ref={containerRef}
         className="relative flex min-h-[90vh] items-end overflow-hidden bg-black text-white"
       >
         <Image
@@ -106,7 +107,7 @@ export function HeroScroll({
     <section
       id="hero-pinned"
       ref={containerRef}
-      className="relative h-[160vh]"
+      className="relative h-[125vh]"
     >
       <div className="sticky top-0 flex h-screen items-end overflow-hidden bg-black text-white">
         <motion.div className="absolute inset-0" style={{ scale: imageScale }}>
@@ -118,11 +119,10 @@ export function HeroScroll({
             className="object-cover opacity-90"
           />
         </motion.div>
-        <motion.div
-          className="absolute inset-0 bg-black"
-          style={{ opacity: overlayOpacity }}
-        />
-        <Container className="relative z-10 pb-20 pt-40">{content}</Container>
+        <div className="absolute inset-0 bg-black/55" />
+        <motion.div style={{ opacity: textOpacity }}>
+          <Container className="relative z-10 pb-20 pt-40">{content}</Container>
+        </motion.div>
       </div>
     </section>
   );
