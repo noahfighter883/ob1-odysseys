@@ -5,9 +5,9 @@ import { Reveal } from "@/components/site/reveal";
 import { odysseys } from "@/content/odysseys";
 
 export const metadata: Metadata = {
-  title: "Odysseys — OB1 Odysseys",
+  title: "Odysseys - OB1 Odysseys",
   description:
-    "Browse every OB1 odyssey — place-based research trips paired with sourced, data-driven analysis.",
+    "Browse every OB1 odyssey: place-based research trips paired with sourced, data-driven analysis.",
 };
 
 export default function OdysseysIndexPage() {
@@ -23,7 +23,7 @@ export default function OdysseysIndexPage() {
         <p className="mt-4 max-w-2xl text-muted-foreground">
           Every odyssey follows the same structure: a Problem Statement, the
           Analysis behind it, a concrete Call to Action, full Sources, and the
-          raw Datasets — so every claim in the field video can be checked
+          raw Datasets, so every claim in the field video can be checked
           here.
         </p>
       </Reveal>

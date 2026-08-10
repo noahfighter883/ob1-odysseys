@@ -30,7 +30,7 @@ export function HeroScroll({
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    // Intentional hydration-completion signal, not state sync — the
+    // Intentional hydration-completion signal, not state sync: the
     // scroll-linked pin below only mounts client-side, post-hydration.
     // eslint-disable-next-line react-hooks/set-state-in-effect
     setMounted(true);

@@ -6,7 +6,7 @@ import { Reveal } from "@/components/site/reveal";
 import { odysseys } from "@/content/odysseys";
 
 export const metadata: Metadata = {
-  title: "Data & Transparency — OB1 Odysseys",
+  title: "Data & Transparency - OB1 Odysseys",
   description:
     "Methodology, data-confidence flags, and every downloadable dataset behind OB1 Odysseys' analysis.",
 };
@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 const principles = [
   {
     title: "Third-party, published sources only",
-    body: "Every odyssey's analysis is built on published third-party datasets, never proprietary or fabricated data — government agencies, research institutions, and cited news reporting.",
+    body: "Every odyssey's analysis is built on published third-party datasets, never proprietary or fabricated data: government agencies, research institutions, and cited news reporting.",
   },
   {
     title: "Raw data ships with every claim",
@@ -26,7 +26,7 @@ const principles = [
   },
   {
     title: "Methodology is documented per dataset",
-    body: "How each dataset was built — what was included, what was excluded, and known gaps — is written up alongside the data, not just the headline numbers.",
+    body: "How each dataset was built (what was included, what was excluded, and known gaps) is written up alongside the data, not just the headline numbers.",
   },
 ];
 
@@ -76,7 +76,7 @@ export default function DataPage() {
           </h2>
           <p className="mt-3 max-w-2xl text-sm text-muted-foreground">
             Datasets are added as each odyssey&apos;s field research and
-            analysis are completed — this list grows with the program.
+            analysis are completed. This list grows with the program.
           </p>
         </Reveal>
         <div className="mt-6 grid gap-4 sm:grid-cols-2">

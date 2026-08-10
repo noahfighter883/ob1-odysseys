@@ -7,9 +7,9 @@ import { Ob1Byline } from "@/components/site/ob1-byline";
 import { siteConfig } from "@/content/site-config";
 
 export const metadata: Metadata = {
-  title: "About — OB1 Odysseys",
+  title: "About - OB1 Odysseys",
   description:
-    "The program thesis and OB1 persona behind OB1 Odysseys — environmental storytelling backed by open data.",
+    "The program thesis and OB1 persona behind OB1 Odysseys: environmental storytelling backed by open data.",
 };
 
 const contentModel = [
@@ -19,15 +19,15 @@ const contentModel = [
   },
   {
     title: "Analysis",
-    body: "The data and evidence behind the claim — trends, comparisons, forecasts.",
+    body: "The data and evidence behind the claim: trends, comparisons, forecasts.",
   },
   {
     title: "Call to Action",
-    body: "What the viewer or reader can do — advocacy, regulation support, behavior change.",
+    body: "What the viewer or reader can do: advocacy, regulation support, behavior change.",
   },
   {
     title: "Sources",
-    body: "Citations for every claim — scientific studies, agency data, and news.",
+    body: "Citations for every claim: scientific studies, agency data, and news.",
   },
   {
     title: "Datasets",
@@ -63,12 +63,12 @@ export default function AboutPage() {
             Who&apos;s behind it
           </h2>
           <p className="mt-4 max-w-2xl text-muted-foreground">
-            OB1 Odysseys is run by a former enterprise analytics leader —
-            background at Workday and Oracle — transitioning into
+            OB1 Odysseys is run by a former enterprise analytics leader
+            (background at Workday and Oracle) transitioning into
             environmental evangelism. The persona, &ldquo;OB1,&rdquo; is a
             Jedi-inspired evangelist: playful in tone, serious in substance.
-            The bet is that analytics discipline — clear evidence, clear
-            stakes, clear stories — can close the gap between knowing and
+            The bet is that analytics discipline (clear evidence, clear
+            stakes, clear stories) can close the gap between knowing and
             acting the same way it has historically closed decision-making
             gaps in enterprise settings.
           </p>
@@ -103,7 +103,7 @@ export default function AboutPage() {
               <ThesisCard
                 icon={<Zap className="size-5" />}
                 title="Political will gap"
-                body="The missing piece isn't evidence, it's action — individual and institutional will lags behind both the science and the economics."
+                body="The missing piece isn't evidence, it's action: individual and institutional will lags behind both the science and the economics."
               />
             </Reveal>
           </div>
@@ -117,7 +117,7 @@ export default function AboutPage() {
           </h2>
           <p className="mt-4 max-w-2xl text-muted-foreground">
             Each odyssey is a place-based research trip that becomes a PSA
-            story. Every story — in the short-form video and on this site —
+            story. Every story, in the short-form video and on this site,
             follows the same five-part structure, so it reads as a public
             service announcement backed by open data, not opinion content.
           </p>
@@ -147,7 +147,7 @@ export default function AboutPage() {
             Where it lives
           </h2>
           <p className="mt-4 max-w-2xl text-muted-foreground">
-            Social media — anchored on Instagram at{" "}
+            Social media (anchored on Instagram at{" "}
             <a
               href={siteConfig.instagramUrl}
               target="_blank"
@@ -155,10 +155,10 @@ export default function AboutPage() {
               className="text-brand underline underline-offset-2"
             >
               {siteConfig.instagramHandle}
-            </a>{" "}
-            — is the primary discovery layer: short-form video designed for
+            </a>
+            ) is the primary discovery layer: short-form video designed for
             reach and emotional impact. This website is the credibility and
-            depth layer — the &ldquo;show your work&rdquo; case that social
+            depth layer, the &ldquo;show your work&rdquo; case that social
             video can&apos;t accommodate.{" "}
             <Link
               href="/odysseys"

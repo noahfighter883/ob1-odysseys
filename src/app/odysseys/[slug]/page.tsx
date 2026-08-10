@@ -28,7 +28,7 @@ export async function generateMetadata({
   const odyssey = getOdyssey(slug);
   if (!odyssey) return {};
   return {
-    title: `${odyssey.title} — OB1 Odysseys`,
+    title: `${odyssey.title} - OB1 Odysseys`,
     description: odyssey.hook,
   };
 }
@@ -163,7 +163,7 @@ function AlWasRightContent({
                 </p>
                 <p className="mt-1 text-sm text-muted-foreground">
                   Computed directly from the {analysis.totalFiresTracked}-fire
-                  published dataset — {analysis.megaFireCount} fires meet the
+                  published dataset: {analysis.megaFireCount} fires meet the
                   mega-fire threshold.
                 </p>
                 <div className="mt-6">
@@ -243,8 +243,7 @@ function AlWasRightContent({
                     </span>
                     {source.detail && (
                       <span className="text-muted-foreground">
-                        {" "}
-                        — {source.detail}
+                        : {source.detail}
                       </span>
                     )}
                   </li>
@@ -312,7 +311,7 @@ function AlWasRightContent({
                   <p className="mt-2 text-sm text-muted-foreground">
                     This odyssey&apos;s short-form PSA is part of the OB1
                     Odysseys series on Instagram. We&apos;ll link the specific
-                    post here once it&apos;s live — for now, the full data
+                    post here once it&apos;s live. For now, the full data
                     case above is what backs every claim it makes.
                   </p>
                   <a

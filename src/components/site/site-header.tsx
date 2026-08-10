@@ -14,7 +14,7 @@ export function SiteHeader() {
   const [revealed, setRevealed] = useState(!isHome);
 
   // Syncs header visibility with client-side route changes (isHome can flip
-  // without a remount) and with the hero section's scroll position — both
+  // without a remount) and with the hero section's scroll position. Both
   // are external-system syncs, not React state mirroring.
   /* eslint-disable react-hooks/set-state-in-effect */
   useEffect(() => {

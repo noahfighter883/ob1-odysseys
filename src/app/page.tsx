@@ -23,7 +23,7 @@ export default function Home() {
     <>
       <HeroScroll
         tagline={siteConfig.tagline}
-        description="OB1 Odysseys turns eco-tourism travel into short-form PSAs — each one backed by a sourced, data-driven case published in full here. Evidence carries the weight, not rhetoric."
+        description="OB1 Odysseys turns eco-tourism travel into short-form PSAs, each one backed by a sourced, data-driven case published in full here. Evidence carries the weight, not rhetoric."
         odysseyHref="/odysseys"
         takeActionHref="/take-action"
       />
@@ -36,7 +36,7 @@ export default function Home() {
               The thesis
             </p>
             <h2 className="mt-2 max-w-2xl font-heading text-2xl font-semibold sm:text-3xl">
-              We&apos;re at a climate inflection point — driven by three
+              We&apos;re at a climate inflection point, driven by three
               converging forces.
             </h2>
           </Reveal>
@@ -45,7 +45,7 @@ export default function Home() {
               <ThesisCard
                 icon={<Flame className="size-5" />}
                 title="Climate urgency"
-                body="Measurable, visible effects of greenhouse gas emissions — rising temperatures, wildfire severity, drought, ecosystem loss."
+                body="Measurable, visible effects of greenhouse gas emissions: rising temperatures, wildfire severity, drought, ecosystem loss."
               />
             </Reveal>
             <Reveal delay={80}>
@@ -59,14 +59,14 @@ export default function Home() {
               <ThesisCard
                 icon={<Zap className="size-5" />}
                 title="Political will gap"
-                body="The missing piece isn't evidence — it's action. Will lags behind both the science and the economics."
+                body="The missing piece isn't evidence, it's action. Will lags behind both the science and the economics."
               />
             </Reveal>
           </div>
           <Reveal delay={100}>
             <p className="mt-8 max-w-2xl text-sm text-muted-foreground">
-              The bet: analytics discipline — clear evidence, clear stakes,
-              clear stories — can close that will gap the way it has
+              The bet: analytics discipline (clear evidence, clear stakes,
+              clear stories) can close that will gap the way it has
               historically closed decision-making gaps in enterprise settings.{" "}
               <Link
                 href="/about"

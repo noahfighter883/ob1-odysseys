@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 import { odysseys } from "@/content/odysseys";
 
 export const metadata: Metadata = {
-  title: "Page Not Found — OB1 Odysseys",
+  title: "Page Not Found - OB1 Odysseys",
 };
 
 export default function NotFound() {
@@ -24,7 +24,7 @@ export default function NotFound() {
         This trail doesn&apos;t lead anywhere.
       </h1>
       <p className="mt-4 max-w-md text-muted-foreground">
-        The page you followed doesn&apos;t exist — it may have moved, or the
+        The page you followed doesn&apos;t exist. It may have moved, or the
         link was mistyped. The odysseys are still right where you left them.
       </p>
       <div className="mt-8 flex flex-wrap justify-center gap-4">

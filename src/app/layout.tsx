@@ -25,20 +25,20 @@ const fraunces = Fraunces({
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "OB1 Odysseys — Save the Planet with Data",
+    default: "OB1 Odysseys - Save the Planet with Data",
     template: "%s",
   },
   description: siteConfig.description,
   openGraph: {
     type: "website",
     siteName: siteConfig.name,
-    title: "OB1 Odysseys — Save the Planet with Data",
+    title: "OB1 Odysseys - Save the Planet with Data",
     description: siteConfig.description,
     url: SITE_URL,
   },
   twitter: {
     card: "summary_large_image",
-    title: "OB1 Odysseys — Save the Planet with Data",
+    title: "OB1 Odysseys - Save the Planet with Data",
     description: siteConfig.description,
   },
 };

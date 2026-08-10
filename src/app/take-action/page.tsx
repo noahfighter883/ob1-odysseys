@@ -7,23 +7,23 @@ import { odysseys } from "@/content/odysseys";
 import { siteConfig } from "@/content/site-config";
 
 export const metadata: Metadata = {
-  title: "Take Action — OB1 Odysseys",
+  title: "Take Action - OB1 Odysseys",
   description:
-    "Concrete, specific actions from every OB1 odyssey — regulations to support, organizations to contact, and behaviors to change.",
+    "Concrete, specific actions from every OB1 odyssey: regulations to support, organizations to contact, and behaviors to change.",
 };
 
 const generalActions = [
   {
     icon: <AtSign className="size-5" />,
     title: `Follow ${siteConfig.instagramHandle}`,
-    body: "New odysseys publish as short-form PSAs there first — the fastest way to see new field research as it drops.",
+    body: "New odysseys publish as short-form PSAs there first, the fastest way to see new field research as it drops.",
     href: siteConfig.instagramUrl,
     linkLabel: "Follow on Instagram",
   },
   {
     icon: <Share2 className="size-5" />,
     title: "Share the data, not just the story",
-    body: "Every odyssey page is built to be linkable and shareable on its own — drop the specific odyssey link, not just the homepage, so people land on the sourced case.",
+    body: "Every odyssey page is built to be linkable and shareable on its own: drop the specific odyssey link, not just the homepage, so people land on the sourced case.",
   },
   {
     icon: <Users className="size-5" />,
@@ -44,7 +44,7 @@ export default function TakeActionPage() {
           Take action
         </p>
         <h1 className="mt-2 max-w-2xl font-heading text-4xl font-semibold sm:text-5xl">
-          Specific, actionable — not just aware.
+          Specific, actionable, not just aware.
         </h1>
         <p className="mt-6 max-w-2xl text-lg text-muted-foreground">
           Evidence is only useful if it moves to action. Below are the
