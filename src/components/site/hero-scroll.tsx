@@ -71,7 +71,11 @@ export function HeroScroll({
           variant="outline"
           nativeButton={false}
           className="border-white/30 bg-transparent text-white hover:bg-white/10 hover:text-white"
-          render={<Link href={takeActionHref}>Take action</Link>}
+          render={
+            <Link href={takeActionHref}>
+              Take action <ArrowRight className="size-4" />
+            </Link>
+          }
         />
       </div>
     </>
