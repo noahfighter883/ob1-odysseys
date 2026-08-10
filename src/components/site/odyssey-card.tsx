@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight, Clock } from "lucide-react";
 import type { Odyssey } from "@/content/odysseys";
@@ -13,9 +14,20 @@ export function OdysseyCard({ odyssey }: { odyssey: Odyssey }) {
       className="group flex flex-col overflow-hidden rounded-2xl border border-border bg-card transition-[transform,box-shadow] duration-200 ease-out hover:-translate-y-1 hover:shadow-lg"
     >
       <div
-        className={`relative flex h-40 items-end overflow-hidden p-5 text-white ${odysseyThemeStyles[odyssey.theme]}`}
+        className={`relative flex h-40 items-end overflow-hidden p-5 text-white ${
+          odyssey.heroImage ? "bg-black" : odysseyThemeStyles[odyssey.theme]
+        }`}
       >
-        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent" />
+        {odyssey.heroImage && (
+          <Image
+            src={odyssey.heroImage.src}
+            alt={odyssey.heroImage.alt}
+            fill
+            sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+            className="object-cover transition-transform duration-500 ease-out group-hover:scale-105"
+          />
+        )}
+        <div className="absolute inset-0 bg-black/65" />
         <Badge
           variant="secondary"
           className="absolute right-4 top-4 z-10 border-0 bg-white/15 text-white backdrop-blur"

@@ -24,8 +24,6 @@ export default function Home() {
       <HeroScroll
         tagline={siteConfig.tagline}
         description="OB1 Odysseys turns eco-tourism travel into short-form PSAs — each one backed by a sourced, data-driven case published in full here. Evidence carries the weight, not rhetoric."
-        statValue={`${frequencyMultiple}×`}
-        statLabel="more mega-fires per year along the Pacific Crest Trail, 2020–25 vs 2000–12 — computed live from the published dataset."
         odysseyHref="/odysseys"
         instagramUrl={siteConfig.instagramUrl}
         instagramHandle={siteConfig.instagramHandle}

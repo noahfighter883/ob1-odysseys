@@ -3,6 +3,7 @@ import { Geist, Geist_Mono, Fraunces } from "next/font/google";
 import "./globals.css";
 import { SiteHeader } from "@/components/site/site-header";
 import { SiteFooter } from "@/components/site/site-footer";
+import { MainContent } from "@/components/site/main-content";
 import { SITE_URL, siteConfig } from "@/content/site-config";
 
 const geistSans = Geist({
@@ -50,7 +51,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     >
       <body className="min-h-full flex flex-col bg-background text-foreground">
         <SiteHeader />
-        <main className="flex-1">{children}</main>
+        <MainContent>{children}</MainContent>
         <SiteFooter />
       </body>
     </html>

@@ -1,11 +1,55 @@
+"use client";
+
+import { useEffect, useState } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { Container } from "@/components/site/container";
 import { MobileNav } from "@/components/site/mobile-nav";
 import { siteConfig } from "@/content/site-config";
+import { cn } from "@/lib/utils";
 
 export function SiteHeader() {
+  const pathname = usePathname();
+  const isHome = pathname === "/";
+  const [revealed, setRevealed] = useState(!isHome);
+
+  // Syncs header visibility with client-side route changes (isHome can flip
+  // without a remount) and with the hero section's scroll position — both
+  // are external-system syncs, not React state mirroring.
+  /* eslint-disable react-hooks/set-state-in-effect */
+  useEffect(() => {
+    if (!isHome) {
+      setRevealed(true);
+      return;
+    }
+
+    setRevealed(false);
+
+    const hero = document.getElementById("hero-pinned");
+    if (!hero) {
+      setRevealed(true);
+      return;
+    }
+
+    const checkScroll = () => {
+      setRevealed(window.scrollY > hero.offsetHeight - 64);
+    };
+
+    checkScroll();
+    window.addEventListener("scroll", checkScroll, { passive: true });
+    return () => window.removeEventListener("scroll", checkScroll);
+  }, [isHome]);
+  /* eslint-enable react-hooks/set-state-in-effect */
+
   return (
-    <header className="sticky top-0 z-50 border-b border-border/80 bg-background/90 backdrop-blur supports-[backdrop-filter]:bg-background/70">
+    <header
+      className={cn(
+        "fixed inset-x-0 top-0 z-50 border-b border-border/80 bg-background/90 backdrop-blur transition-[transform,opacity] duration-300 ease-out supports-[backdrop-filter]:bg-background/70",
+        revealed
+          ? "translate-y-0 opacity-100"
+          : "pointer-events-none -translate-y-full opacity-0"
+      )}
+    >
       <Container className="flex h-16 items-center justify-between">
         <Link
           href="/"

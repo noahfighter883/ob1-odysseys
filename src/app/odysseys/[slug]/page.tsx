@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowLeft, AtSign, Clock, Download } from "lucide-react";
@@ -46,9 +47,21 @@ export default async function OdysseyPage({
   return (
     <>
       <section
-        className={`relative overflow-hidden text-white ${odysseyThemeStyles[odyssey.theme]}`}
+        className={`relative overflow-hidden text-white ${
+          odyssey.heroImage ? "bg-black" : odysseyThemeStyles[odyssey.theme]
+        }`}
       >
-        <div className="absolute inset-0 bg-black/40" />
+        {odyssey.heroImage && (
+          <Image
+            src={odyssey.heroImage.src}
+            alt={odyssey.heroImage.alt}
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover"
+          />
+        )}
+        <div className="absolute inset-0 bg-black/55" />
         <Container className="relative z-10 py-16">
           <Link
             href="/odysseys"

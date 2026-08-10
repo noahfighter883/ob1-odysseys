@@ -37,6 +37,8 @@ export type Odyssey = {
   /** Direct link to this odyssey's specific PSA post. Falls back to the
    * general Instagram feed when not yet published. */
   videoUrl?: string;
+  /** Real field photography. Falls back to the theme gradient when unset. */
+  heroImage?: { src: string; alt: string };
 };
 
 export const odysseys: Odyssey[] = [
@@ -49,6 +51,10 @@ export const odysseys: Odyssey[] = [
     theme: "ember",
     summary:
       "Comparing the scale and frequency of wildfires along the PCT corridor over the last 25 years.",
+    heroImage: {
+      src: "/images/odysseys/al-was-right.jpg",
+      alt: "A wildfire burning through a forested hillside at night along a river, with two deer standing in the water reflecting the flames.",
+    },
     problemStatement: [
       "The Pacific Crest Trail runs 2,650 miles through the exact forests, watersheds, and mountain corridors that have absorbed the worst of the American West's wildfire escalation since 2000. Sections of the trail are now closed most summers — not as a rare event, but as an expected part of the season.",
       "\"Al Was Right\" is a name, not a subtitle: this odyssey is built to test a claim, not assert one. Is the wildfire trend along the PCT actually getting worse, or does it just feel that way because of media coverage? The data settles it.",
@@ -119,6 +125,10 @@ export const odysseys: Odyssey[] = [
     theme: "desert",
     summary:
       "A 14-day field research trip through Utah's national monuments, tracking land-use and climate impacts on high-desert ecosystems.",
+    heroImage: {
+      src: "/images/odysseys/utah-national-monuments.jpg",
+      alt: "A sandstone natural arch in Utah's high desert, photographed from below against a blue sky.",
+    },
     comingSoonNote:
       "Field research and data collection for this odyssey are in progress. The full Problem Statement, Analysis, Call to Action, Sources, and Datasets will publish here once the trip is complete.",
   },
@@ -131,6 +141,10 @@ export const odysseys: Odyssey[] = [
     theme: "dusk",
     summary:
       "A forecasted story projecting the loss of the park's namesake species over the next half-century.",
+    heroImage: {
+      src: "/images/odysseys/joshua-tree.jpg",
+      alt: "A weathered Joshua tree standing alone in the high desert, with distant mountains and a clear blue sky.",
+    },
     comingSoonNote:
       "Sourcing and analysis for this forecast are still being produced. The full Problem Statement, Analysis, Call to Action, Sources, and Datasets will publish here once research is complete.",
   },
