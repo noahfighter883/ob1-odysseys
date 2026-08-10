@@ -25,8 +25,7 @@ export default function Home() {
         tagline={siteConfig.tagline}
         description="OB1 Odysseys turns eco-tourism travel into short-form PSAs — each one backed by a sourced, data-driven case published in full here. Evidence carries the weight, not rhetoric."
         odysseyHref="/odysseys"
-        instagramUrl={siteConfig.instagramUrl}
-        instagramHandle={siteConfig.instagramHandle}
+        takeActionHref="/take-action"
       />
 
       {/* Thesis strip */}

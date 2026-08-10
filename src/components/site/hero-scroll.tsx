@@ -16,16 +16,14 @@ type HeroScrollProps = {
   tagline: string;
   description: string;
   odysseyHref: string;
-  instagramUrl: string;
-  instagramHandle: string;
+  takeActionHref: string;
 };
 
 export function HeroScroll({
   tagline,
   description,
   odysseyHref,
-  instagramUrl,
-  instagramHandle,
+  takeActionHref,
 }: HeroScrollProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const reduceMotion = useReducedMotion();
@@ -73,11 +71,7 @@ export function HeroScroll({
           variant="outline"
           nativeButton={false}
           className="border-white/30 bg-transparent text-white hover:bg-white/10 hover:text-white"
-          render={
-            <a href={instagramUrl} target="_blank" rel="noreferrer">
-              Follow {instagramHandle}
-            </a>
-          }
+          render={<Link href={takeActionHref}>Take action</Link>}
         />
       </div>
     </>
