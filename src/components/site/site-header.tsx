@@ -33,7 +33,7 @@ export function SiteHeader() {
     }
 
     const checkScroll = () => {
-      setRevealed(window.scrollY > hero.offsetHeight - 64);
+      setRevealed(window.scrollY > 48);
     };
 
     checkScroll();
