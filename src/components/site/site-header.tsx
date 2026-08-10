@@ -5,6 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Container } from "@/components/site/container";
 import { MobileNav } from "@/components/site/mobile-nav";
+import { ThemeToggle } from "@/components/site/theme-toggle";
 import { siteConfig } from "@/content/site-config";
 import { cn } from "@/lib/utils";
 
@@ -68,15 +69,18 @@ export function SiteHeader() {
             </Link>
           ))}
         </nav>
-        <a
-          href={siteConfig.instagramUrl}
-          target="_blank"
-          rel="noreferrer"
-          className="hidden text-sm font-medium text-brand hover:underline sm:inline-block"
-        >
-          {siteConfig.instagramHandle}
-        </a>
-        <MobileNav />
+        <div className="flex items-center gap-4">
+          <a
+            href={siteConfig.instagramUrl}
+            target="_blank"
+            rel="noreferrer"
+            className="hidden text-sm font-medium text-brand hover:underline sm:inline-block"
+          >
+            {siteConfig.instagramHandle}
+          </a>
+          <ThemeToggle className="inline-flex size-9 items-center justify-center rounded-md text-muted-foreground transition-colors hover:bg-muted hover:text-foreground" />
+          <MobileNav />
+        </div>
       </Container>
     </header>
   );
