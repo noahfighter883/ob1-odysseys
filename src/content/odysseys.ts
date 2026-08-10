@@ -38,7 +38,7 @@ export type Odyssey = {
    * general Instagram feed when not yet published. */
   videoUrl?: string;
   /** Real field photography. Falls back to the theme gradient when unset. */
-  heroImage?: { src: string; alt: string };
+  heroImage?: { src: string; alt: string; position?: string };
 };
 
 export const odysseys: Odyssey[] = [
@@ -54,6 +54,7 @@ export const odysseys: Odyssey[] = [
     heroImage: {
       src: "/images/odysseys/al-was-right.jpg",
       alt: "A wildfire burning across a forested hillside at night, flames glowing through thick smoke lit orange by the blaze.",
+      position: "center 80%",
     },
     problemStatement: [
       "The Pacific Crest Trail runs 2,650 miles through the exact forests, watersheds, and mountain corridors that have absorbed the worst of the American West's wildfire escalation since 2000. Sections of the trail are now closed most summers — not as a rare event, but as an expected part of the season.",

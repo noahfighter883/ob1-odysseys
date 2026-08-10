@@ -59,6 +59,7 @@ export default async function OdysseyPage({
             priority
             sizes="100vw"
             className="object-cover"
+            style={{ objectPosition: odyssey.heroImage.position }}
           />
         )}
         <div className="absolute inset-0 bg-black/55" />
