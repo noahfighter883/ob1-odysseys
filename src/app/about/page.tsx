@@ -124,7 +124,7 @@ export default function AboutPage() {
           <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
             {contentModel.map((item, i) => (
               <Reveal key={item.title} delay={i * 60}>
-                <div className="rounded-2xl border border-border bg-card p-5">
+                <div className="h-full rounded-2xl border border-border bg-card p-5">
                   <p className="text-xs font-medium text-muted-foreground">
                     {String(i + 1).padStart(2, "0")}
                   </p>
@@ -183,7 +183,7 @@ function ThesisCard({
   body: string;
 }) {
   return (
-    <div className="rounded-2xl border border-border bg-card p-6">
+    <div className="h-full rounded-2xl border border-border bg-card p-6">
       <div className="flex size-10 items-center justify-center rounded-full bg-brand/10 text-brand">
         {icon}
       </div>

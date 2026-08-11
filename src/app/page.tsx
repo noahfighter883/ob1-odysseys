@@ -196,7 +196,7 @@ function ThesisCard({
   body: string;
 }) {
   return (
-    <div className="rounded-2xl border border-border bg-card p-6">
+    <div className="h-full rounded-2xl border border-border bg-card p-6">
       <div className="flex size-10 items-center justify-center rounded-full bg-brand/10 text-brand">
         {icon}
       </div>

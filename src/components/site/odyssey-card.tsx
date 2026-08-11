@@ -11,7 +11,7 @@ export function OdysseyCard({ odyssey }: { odyssey: Odyssey }) {
   return (
     <Link
       href={`/odysseys/${odyssey.slug}`}
-      className="group flex flex-col overflow-hidden rounded-2xl border border-border bg-card transition-[transform,box-shadow] duration-200 ease-out hover:-translate-y-1 hover:shadow-lg"
+      className="group flex h-full flex-col overflow-hidden rounded-2xl border border-border bg-card transition-[transform,box-shadow] duration-200 ease-out hover:-translate-y-1 hover:shadow-lg"
     >
       <div
         className={`relative flex h-40 items-end overflow-hidden p-5 text-white ${

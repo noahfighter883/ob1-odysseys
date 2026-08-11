@@ -62,7 +62,7 @@ export default function TakeActionPage() {
         <div className="mt-6 grid gap-4 sm:grid-cols-3">
           {generalActions.map((action, i) => (
             <Reveal key={action.title} delay={i * 80}>
-              <div className="rounded-2xl border border-border bg-card p-6">
+              <div className="h-full rounded-2xl border border-border bg-card p-6">
                 <div className="flex size-10 items-center justify-center rounded-full bg-brand/10 text-brand">
                   {action.icon}
                 </div>

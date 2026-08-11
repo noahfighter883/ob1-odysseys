@@ -219,7 +219,7 @@ function AlWasRightContent({
           <div className="mt-4 grid grid-cols-[repeat(auto-fit,minmax(240px,1fr))] gap-4">
             {odyssey.callToAction?.map((cta, i) => (
               <Reveal key={cta.title} delay={(i % 2) * 80}>
-                <div className="rounded-2xl border border-border bg-card p-5">
+                <div className="h-full rounded-2xl border border-border bg-card p-5">
                   <p className="font-heading font-semibold">{cta.title}</p>
                   <p className="mt-2 text-sm text-muted-foreground">
                     {cta.body}
@@ -259,7 +259,7 @@ function AlWasRightContent({
           <div className="mt-4 grid gap-4 sm:grid-cols-2">
             {odyssey.datasets?.map((dataset, i) => (
               <Reveal key={dataset.file} delay={(i % 2) * 80}>
-                <div className="flex flex-col rounded-2xl border border-border bg-card p-5">
+                <div className="flex h-full flex-col rounded-2xl border border-border bg-card p-5">
                   <p className="font-heading font-semibold">{dataset.label}</p>
                   <p className="mt-1 text-xs text-muted-foreground">
                     {dataset.rowCount} rows

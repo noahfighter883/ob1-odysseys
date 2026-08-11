@@ -60,7 +60,7 @@ export default function DataPage() {
         <div className="mt-6 grid gap-4 sm:grid-cols-2">
           {principles.map((p, i) => (
             <Reveal key={p.title} delay={(i % 2) * 80}>
-              <div className="rounded-2xl border border-border bg-card p-6">
+              <div className="h-full rounded-2xl border border-border bg-card p-6">
                 <p className="font-heading font-semibold">{p.title}</p>
                 <p className="mt-2 text-sm text-muted-foreground">{p.body}</p>
               </div>
@@ -82,7 +82,7 @@ export default function DataPage() {
         <div className="mt-6 grid gap-4 sm:grid-cols-2">
           {datasets.map((dataset, i) => (
             <Reveal key={dataset.file} delay={(i % 2) * 80}>
-              <div className="flex flex-col rounded-2xl border border-border bg-card p-6">
+              <div className="flex h-full flex-col rounded-2xl border border-border bg-card p-6">
                 <p className="text-xs font-medium uppercase tracking-wide text-muted-foreground">
                   {dataset.odyssey.title}
                 </p>
