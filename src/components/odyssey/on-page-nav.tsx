@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { Container } from "@/components/site/container";
 import { cn } from "@/lib/utils";
 
 const SECTIONS: [string, string][] = [
@@ -17,7 +18,7 @@ export function OnPageNav() {
 
   useEffect(() => {
     const elements = SECTIONS.map(([id]) => document.getElementById(id)).filter(
-      (el): el is HTMLElement => el !== null
+      (el): el is HTMLElement => el !== null,
     );
     if (elements.length === 0) return;
 
@@ -28,7 +29,7 @@ export function OnPageNav() {
           .sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top);
         if (visible[0]) setActiveId(visible[0].target.id);
       },
-      { rootMargin: "-15% 0px -70% 0px", threshold: 0 }
+      { rootMargin: "-15% 0px -70% 0px", threshold: 0 },
     );
 
     elements.forEach((el) => observer.observe(el));
@@ -36,22 +37,26 @@ export function OnPageNav() {
   }, []);
 
   return (
-    <div className="sticky top-24 space-y-1 border-l border-border pl-5 text-sm">
-      {SECTIONS.map(([id, label]) => (
-        <a
-          key={id}
-          href={`#${id}`}
-          aria-current={activeId === id ? "location" : undefined}
-          className={cn(
-            "-ml-px block border-l-2 py-1 pl-5 transition-colors duration-150",
-            activeId === id
-              ? "border-brand font-medium text-foreground"
-              : "border-transparent text-muted-foreground hover:text-foreground"
-          )}
-        >
-          {label}
-        </a>
-      ))}
+    <div className="sticky top-16 z-40 border-b border-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/80">
+      <Container>
+        <nav className="flex gap-1 overflow-x-auto py-3 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+          {SECTIONS.map(([id, label]) => (
+            <a
+              key={id}
+              href={`#${id}`}
+              aria-current={activeId === id ? "location" : undefined}
+              className={cn(
+                "shrink-0 rounded-full px-3.5 py-1.5 text-sm whitespace-nowrap transition-colors duration-150",
+                activeId === id
+                  ? "bg-brand/10 font-medium text-brand"
+                  : "text-muted-foreground hover:bg-muted hover:text-foreground",
+              )}
+            >
+              {label}
+            </a>
+          ))}
+        </nav>
+      </Container>
     </div>
   );
 }
