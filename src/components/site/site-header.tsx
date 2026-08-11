@@ -51,35 +51,37 @@ export function SiteHeader() {
           : "pointer-events-none -translate-y-full opacity-0"
       )}
     >
-      <Container className="flex h-16 items-center justify-between">
-        <Link
-          href="/"
-          className="font-heading text-lg font-semibold tracking-tight text-foreground"
-        >
-          OB1 <span className="text-brand">Odysseys</span>
-        </Link>
-        <nav className="hidden items-center gap-7 text-sm font-medium text-muted-foreground md:flex">
-          {siteConfig.nav.slice(1).map((item) => (
-            <Link
-              key={item.href}
-              href={item.href}
-              className="transition-colors hover:text-foreground"
-            >
-              {item.label}
-            </Link>
-          ))}
-        </nav>
-        <div className="flex items-center gap-4">
-          <a
-            href={siteConfig.instagramUrl}
-            target="_blank"
-            rel="noreferrer"
-            className="hidden text-sm font-medium text-brand hover:underline sm:inline-block"
+      <Container>
+        <div className="mx-auto flex h-16 max-w-3xl items-center justify-between">
+          <Link
+            href="/"
+            className="font-heading text-lg font-semibold tracking-tight text-foreground"
           >
-            {siteConfig.instagramHandle}
-          </a>
-          <ThemeToggle className="inline-flex size-9 items-center justify-center rounded-md text-muted-foreground transition-colors hover:bg-muted hover:text-foreground" />
-          <MobileNav />
+            OB1 <span className="text-brand">Odysseys</span>
+          </Link>
+          <nav className="hidden items-center gap-7 text-sm font-medium text-muted-foreground md:flex">
+            {siteConfig.nav.slice(1).map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                className="transition-colors hover:text-foreground"
+              >
+                {item.label}
+              </Link>
+            ))}
+          </nav>
+          <div className="flex items-center gap-4">
+            <a
+              href={siteConfig.instagramUrl}
+              target="_blank"
+              rel="noreferrer"
+              className="hidden text-sm font-medium text-brand hover:underline sm:inline-block"
+            >
+              {siteConfig.instagramHandle}
+            </a>
+            <ThemeToggle className="inline-flex size-9 items-center justify-center rounded-md text-muted-foreground transition-colors hover:bg-muted hover:text-foreground" />
+            <MobileNav />
+          </div>
         </div>
       </Container>
     </header>
