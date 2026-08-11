@@ -5,7 +5,6 @@ import { notFound } from "next/navigation";
 import { ArrowLeft, AtSign, Clock, Download } from "lucide-react";
 import { Container } from "@/components/site/container";
 import { Reveal } from "@/components/site/reveal";
-import { Ob1Byline } from "@/components/site/ob1-byline";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { odysseys, getOdyssey } from "@/content/odysseys";
@@ -71,8 +70,7 @@ export default async function OdysseyPage({
             <ArrowLeft className="size-4" /> All odysseys
           </Link>
           <div className="animate-in fade-in slide-in-from-bottom-4 fill-mode-both mt-6 duration-500 ease-out">
-            <Ob1Byline />
-            <div className="mt-4 flex flex-wrap items-center gap-3">
+            <div className="flex flex-wrap items-center gap-3">
               <Badge
                 variant="secondary"
                 className="border-0 bg-white/15 text-white backdrop-blur"

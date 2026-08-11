@@ -6,7 +6,6 @@ import Image from "next/image";
 import { motion, useReducedMotion, useScroll, useTransform } from "motion/react";
 import { ArrowRight } from "lucide-react";
 import { Container } from "@/components/site/container";
-import { Ob1Byline } from "@/components/site/ob1-byline";
 import { Button } from "@/components/ui/button";
 
 const HERO_ALT =
@@ -47,7 +46,6 @@ export function HeroScroll({
   const content = (
     <>
       <div className="animate-in fade-in slide-in-from-bottom-4 fill-mode-both duration-700 ease-out">
-        <Ob1Byline className="mb-5" />
         <h1 className="max-w-4xl font-heading text-5xl font-semibold leading-[1.05] tracking-tight sm:text-6xl md:text-7xl">
           {tagline}
         </h1>

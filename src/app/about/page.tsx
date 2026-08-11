@@ -3,7 +3,6 @@ import Link from "next/link";
 import { Flame, TrendingUp, Zap } from "lucide-react";
 import { Container } from "@/components/site/container";
 import { Reveal } from "@/components/site/reveal";
-import { Ob1Byline } from "@/components/site/ob1-byline";
 import { siteConfig } from "@/content/site-config";
 
 export const metadata: Metadata = {
@@ -58,8 +57,7 @@ export default function AboutPage() {
 
       <Reveal>
         <section className="mt-16">
-          <Ob1Byline tone="dark" />
-          <h2 className="mt-3 font-heading text-2xl font-semibold">
+          <h2 className="font-heading text-2xl font-semibold">
             Who&apos;s behind it
           </h2>
           <p className="mt-4 max-w-2xl text-muted-foreground">
