@@ -190,15 +190,6 @@ function AlWasRightContent({
         </Reveal>
 
         <Reveal>
-          <PhotoBand
-            className="mt-8"
-            src="/images/odysseys/al-was-right-river.jpg"
-            alt="Two deer standing in a river at dusk, silhouetted against a wildfire burning through the forested hillside behind them."
-            caption="Wildlife sharing a river with an advancing burn. The trail corridor isn't an abstraction, it's habitat."
-          />
-        </Reveal>
-
-        <Reveal>
           <div className="mt-8 rounded-2xl border border-border bg-card p-6">
             <p className="font-heading text-lg font-semibold">
               Six largest fires in the dataset
