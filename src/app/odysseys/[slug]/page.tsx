@@ -143,6 +143,14 @@ function AlWasRightContent({
         </Reveal>
       </section>
 
+      <Reveal>
+        <PhotoBand
+          src="/images/odysseys/al-was-right-aerial.jpg"
+          alt="An aerial night view of a mountainside wildfire, with thousands of embers and spot fires scattered across the slopes under a smoke-orange sky."
+          caption="A mega-fire burning across a Sierra mountainside at night, the kind of event this dataset tracks."
+        />
+      </Reveal>
+
       {/* Analysis */}
       <section id="analysis" className="scroll-mt-36">
         <Reveal>
@@ -182,6 +190,15 @@ function AlWasRightContent({
         </Reveal>
 
         <Reveal>
+          <PhotoBand
+            className="mt-8"
+            src="/images/odysseys/al-was-right-river.jpg"
+            alt="Two deer standing in a river at dusk, silhouetted against a wildfire burning through the forested hillside behind them."
+            caption="Wildlife sharing a river with an advancing burn. The trail corridor isn't an abstraction, it's habitat."
+          />
+        </Reveal>
+
+        <Reveal>
           <div className="mt-8 rounded-2xl border border-border bg-card p-6">
             <p className="font-heading text-lg font-semibold">
               Six largest fires in the dataset
@@ -207,6 +224,14 @@ function AlWasRightContent({
           </div>
         </Reveal>
       </section>
+
+      <Reveal>
+        <PhotoBand
+          src="/images/odysseys/al-was-right-flames.jpg"
+          alt="A close, ground-level view of flames engulfing a dense stand of tall pine trees at night."
+          caption="Flame heights like this leave little room for suppression, and even less for the ecosystem to recover on its own."
+        />
+      </Reveal>
 
       {/* Call to action */}
       <section id="action" className="scroll-mt-36">
@@ -318,6 +343,37 @@ function AlWasRightContent({
         </Reveal>
       </section>
     </Container>
+  );
+}
+
+function PhotoBand({
+  src,
+  alt,
+  caption,
+  className,
+}: {
+  src: string;
+  alt: string;
+  caption: string;
+  className?: string;
+}) {
+  return (
+    <figure
+      className={`overflow-hidden rounded-2xl border border-border ${className ?? ""}`}
+    >
+      <div className="relative aspect-video w-full">
+        <Image
+          src={src}
+          alt={alt}
+          fill
+          sizes="(min-width: 1024px) 1024px, 100vw"
+          className="object-cover"
+        />
+      </div>
+      <figcaption className="bg-card px-5 py-3 text-sm text-muted-foreground">
+        {caption}
+      </figcaption>
+    </figure>
   );
 }
 
