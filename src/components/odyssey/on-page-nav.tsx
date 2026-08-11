@@ -39,25 +39,23 @@ export function OnPageNav() {
   return (
     <div className="sticky top-16 z-40 border-b border-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/80">
       <Container>
-        <div className="mx-auto max-w-3xl">
-          <nav className="-ml-3.5 flex gap-1 overflow-x-auto py-3 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
-            {SECTIONS.map(([id, label]) => (
-              <a
-                key={id}
-                href={`#${id}`}
-                aria-current={activeId === id ? "location" : undefined}
-                className={cn(
-                  "shrink-0 rounded-full px-3.5 py-1.5 text-sm whitespace-nowrap transition-colors duration-150",
-                  activeId === id
-                    ? "bg-brand/10 font-medium text-brand"
-                    : "text-muted-foreground hover:bg-muted hover:text-foreground",
-                )}
-              >
-                {label}
-              </a>
-            ))}
-          </nav>
-        </div>
+        <nav className="flex gap-1 overflow-x-auto py-3 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+          {SECTIONS.map(([id, label]) => (
+            <a
+              key={id}
+              href={`#${id}`}
+              aria-current={activeId === id ? "location" : undefined}
+              className={cn(
+                "shrink-0 rounded-full px-3.5 py-1.5 text-sm whitespace-nowrap transition-colors duration-150",
+                activeId === id
+                  ? "bg-brand/10 font-medium text-brand"
+                  : "text-muted-foreground hover:bg-muted hover:text-foreground",
+              )}
+            >
+              {label}
+            </a>
+          ))}
+        </nav>
       </Container>
     </div>
   );
